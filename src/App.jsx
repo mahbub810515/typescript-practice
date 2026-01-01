@@ -4,7 +4,8 @@ import User from './assets/components/User'
 const App = () => {
   return (
     <div>     
-      <User />
+      <User name={"mahabub"} age={32} isRegistered={true} />
+      
     </div>
   )
 }
