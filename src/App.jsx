@@ -1,9 +1,10 @@
 import React from 'react'
+import User from './assets/components/User'
 
 const App = () => {
   return (
-    <div>
-      
+    <div>     
+      <User />
     </div>
   )
 }
