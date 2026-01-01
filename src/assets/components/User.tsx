@@ -1,28 +1,29 @@
-import React from 'react'
+import React, { use } from 'react'
 
-type userProps = { 
-    user: {
-    name: string;
-    age: number;
-    isRegistered: boolean;
-    lan: string[];
-}
+type userProps = {
+    users: {
+        name: string;
+        age: number;
+        isRegistered: boolean;
+        lan: string[];
+    }[]
 }
 
-const User = ({user}:userProps) => {
+const User = ({ users }: userProps) => {
     return (
-        <div className='w-100 h-50 mx-auto my-10 p-4 text-xl text-white border rounded bg-gray-400'>
+        <div >
             <h1 className='text-center font-bold text-2xl'>User Interface</h1>
-            <h3>Name : {user.name}</h3>
-            <h3>Age : {user.age}</h3>
-            <h2>Speaks:
-                {user.lan.map((language,index)=>{
-                    return <span key={index}> {language} </span>
-                })}
+            {users.map((user) => {
+                return <div className='w-100 h-50 mx-auto my-10 p-4 text-xl text-white border rounded bg-gray-400'>
+                    <h2>Name: {user.name}</h2>
+                    <h2>Age: {user.age}</h2>
+                    <h2 className='flex gap-2'>Lang:  {user.lan.map((lang,index)=>{
+                        return <p key={index}>{lang}</p>
+                    })} </h2>
+                    {user.isRegistered? <p>resgistered user</p> : <p>Not Reg user</p>}
+                </div>
 
-            </h2>
-            {user.isRegistered ? <p>Registered User</p> : <p>Not Resigtered User</p>}
-
+            })}
         </div>
     )
 }
