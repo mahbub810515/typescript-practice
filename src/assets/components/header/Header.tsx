@@ -3,14 +3,15 @@ import Container from "../common/Container"
 
 
 const Header = () => {
-  return (
-    <div>
-       <Container>
-            <h1>container</h1>
-       </Container>
-      
-    </div>
-  )
+    return (
+        <header>
+            <nav>
+                <Container>
+                    <img src="images/logo.png" alt="logo" />
+                </Container>
+            </nav>
+        </header>
+    )
 }
 
 export default Header
