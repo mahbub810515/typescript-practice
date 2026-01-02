@@ -18,9 +18,7 @@ let users = [{
 
 const App = () => {
   return (
-    <div>
-      <User users={users}/>
-      <Button>click me</Button>
+    <div>  
      
 
     </div>
